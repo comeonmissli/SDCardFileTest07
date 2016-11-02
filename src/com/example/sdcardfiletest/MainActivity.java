@@ -41,10 +41,9 @@ public class MainActivity extends Activity {
 		try {
 			if (Environment.getExternalStorageState().equals(
 					Environment.MEDIA_MOUNTED)) {
-				File sdCardDir = Environment.getExternalStorageDirectory();
+				File sdCardDir = Environment.getExternalStorageDirectory();//获取SD卡的目录
 				File destFile = new File(sdCardDir.getCanonicalPath()
 						+ File.separator + fileName);
-				System.out.println("*********"+destFile.getAbsolutePath());
 				RandomAccessFile raf = new RandomAccessFile(destFile, "rw");
 				raf.seek(destFile.length());
 				raf.write(content.getBytes());
